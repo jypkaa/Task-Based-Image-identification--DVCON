@@ -3,7 +3,7 @@
 
 **Team:** K Jyothsna Padma | B Mythri Reddy | MSN Subhiksha  
 Please refer to report for final results.
-Dataset used : COCO Dataset [COCO Dataset](https://cocodataset.org/#home)
+Dataset used : [COCO Dataset](https://cocodataset.org/#home)
 ---
 
 ## Architecture 

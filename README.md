@@ -2,7 +2,7 @@
 ## DVCon India 2026 | Design Contest Stage 2A
 
 **Team:** K Jyothsna Padma, B Mythri Reddy, MSN Subhiksha  
-**Institute:** NIT Warangal | Team ID: 199
+Team ID: 199
 ---
 
 ## Setup
@@ -55,31 +55,17 @@ python main.py --images_dir ./test_images --variant tf_efficientdet_d1
 | 11 | extinguish fire | fire hydrant                      |
 | 12 | cut             | knife, scissors                   |
 | 13 | clean           | toothbrush, sink                  |
-
----
-
-## Output Files
-
-```
-outputs/
-├── <image>__<task>.jpg         ← annotated image (green=selected, red=rejected)
-├── evaluation_results.json     ← full structured results for all images × tasks
-└── summary_table.txt           ← readable table for your Stage 2A report
-```
-
 ---
 
 ## File Structure
 
 ```
 specops_pipeline/
-├── main.py           ← Entry point / evaluation runner
+├── main.py           ← Entry point
 ├── pipeline.py       ← 4-stage pipeline (§7 preprocess → §8 detect → §9 score → §11 threshold)
 ├── model_setup.py    ← EfficientDet loader, ONNX export, inferencer class
 ├── task_vectors.py   ← 14 task weight vectors W_1...W_14 (DDR memory simulation)
 ├── requirements.txt  ← Dependencies
-├── test_images/      ← Put your test images here
-└── outputs/          ← Results saved here automatically
 ```
 
 ---
@@ -97,5 +83,5 @@ Relative thresholding (§11):
   threshold = 0.80 × top_score
   selected  = { obj | score(obj) ≥ threshold }
 ```
-
+Please see the report for outputs
 

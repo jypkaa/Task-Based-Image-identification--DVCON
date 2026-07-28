@@ -3,41 +3,6 @@
 
 **Team:** K Jyothsna Padma, B Mythri Reddy, MSN Subhiksha  
 **Institute:** NIT Warangal | Team ID: 199
-
----
-
-## How This Maps to Your Stage 1 Proposal
-
-```
-Stage 1 Proposal Block Diagram          This Code
-────────────────────────────            ─────────────────────────────────────
-DataSet (COCO)                          COCO pretrained weights (auto-download)
-  ↓                                       ↓
-Train Model (EfficientNet backbone)     effdet library: tf_efficientdet_d0
-  ↓                                       ↓
-Trained Weights                         pretrained=True  (model_setup.py)
-  ↓                                       ↓
-Quantization (FP32 → INT8)              _export_onnx() → ONNXRuntime INT8
-  ↓                                       ↓
-Model Conversion (ONNX → FPGA)          .onnx file (Stage 3: Vivado bitstream)
-  ↓ DEPLOYMENT                            ↓ PIPELINE
-Input Image + Task Query                --image + --task arguments
-  ↓                                       ↓
-Preprocessing (Resize+Normalize)        stage1_preprocess()  — pipeline.py
-  ↓                                       ↓
-FPGA: CNN Backbone + Detection Head     stage2_fpga_detection()  — pipeline.py
-  ↓                                       ↓
-Detected Objects + Feature Vectors      list of {class, conf, bbox, feat_vec}
-  ↓                                       ↓
-Task Input → Task→Vector                _identify_task() + W_t lookup
-  ↓                                       ↓
-Relevance Scoring: score = x · W        np.dot(x, W_t)  — pipeline.py
-  ↓                                       ↓
-Relative Thresholding                   stage4_relative_threshold() — 0.80×top
-  ↓                                       ↓
-Final Task-Aware Output                 primary_object + selected candidates
-```
-
 ---
 
 ## Setup

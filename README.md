@@ -98,15 +98,4 @@ Relative thresholding (§11):
   selected  = { obj | score(obj) ≥ threshold }
 ```
 
----
 
-## Stage 2A Deliverables Checklist
-
-- [x] Functionally correct pipeline — all 14 tasks, CPU inference
-- [x] EfficientNet backbone (EfficientDet) — matches Stage 1 proposal
-- [x] ONNX export — proposal §5 (PyTorch → ONNX)
-- [x] Multi-image evaluation
-- [x] Annotated output images for results page
-- [ ] 2-page report (use summary_table.txt + output images)
-- [ ] Demo video (screen record `python main.py --demo`)
-- Deadline: May 5, 2026

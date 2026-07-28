@@ -1,0 +1,26 @@
+# SpecOps 199 — DVCon India 2026 Stage 2A
+# Task-Oriented Object Identification
+# =====================================
+# Install order matters — run:
+#   pip install -r requirements.txt
+
+# ── EfficientDet (EfficientNet backbone) — matches Stage 1 proposal ──
+effdet>=0.4.1          # EfficientDet implementation (timm-based)
+timm>=0.9.0            # EfficientNet pretrained weights
+
+# ── ONNX export and CPU inference (proposal §4, §5) ──
+onnx>=1.14.0
+onnxruntime>=1.16.0    # CPU inference (INT8-optimized)
+
+# ── Deep learning framework ──
+torch>=2.0.0
+torchvision>=0.15.0
+
+# ── Image processing ──
+opencv-python>=4.8.0
+Pillow>=9.0.0
+
+# ── Utilities ──
+numpy>=1.24.0
+PyYAML>=6.0
+tqdm>=4.65.0
